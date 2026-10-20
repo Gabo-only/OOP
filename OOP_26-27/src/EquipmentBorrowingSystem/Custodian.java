@@ -1,7 +1,7 @@
 /**
- * Personnel authorized to approve or deny borrow requests.
- * Implements Approver — demonstrates interface-based ABSTRACTION
- * and is a second source of POLYMORPHISM if other approver types are added later.
+    personnel authorized to approve or deny borrow requests
+    implements Approver — demonstrates ABSTRACTION
+    and is a second source of POLYMORPHISM if other approver types are added later.
  */
 public class Custodian implements Approver {
 

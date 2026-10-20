@@ -2,10 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Holds all objects in memory (arrays/ArrayLists per project requirement —
- * no database needed this semester) and contains the core business logic.
- * Keep this logic here — NOT in main() — so it can be reused later
- * when Event-Driven / GUI features are added.
+    this part holds all the memory, and data that the project needed
  */
 public class InventorySystem {
 

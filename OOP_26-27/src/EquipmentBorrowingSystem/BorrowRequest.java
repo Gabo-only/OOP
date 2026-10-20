@@ -1,9 +1,9 @@
 import java.time.LocalDate;
 
 /**
- * Represents one borrowing transaction between a User and an Equipment item.
- * Demonstrates ASSOCIATION (holds references to User and Equipment),
- * STATE MANAGEMENT (RequestStatus lifecycle), and business rule enforcement.
+    represents one borrowing transaction between a User and an Equipment item
+    demonstrates ASSOCIATION (holds references to User and Equipment),
+    state managing (RequestStatus lifecycle), and business rule enforcement
  */
 public class BorrowRequest {
 
@@ -29,6 +29,8 @@ public class BorrowRequest {
     public Equipment getEquipment() { return equipment; }
     public RequestStatus getStatus() { return status; }
     public LocalDate getDueDate() { return dueDate; }
+    public LocalDate getDateReturned() { return dateReturned; }
+    public String getDenyReason() { return denyReason; }
 
     /** Business rule: cannot approve a request that isn't PENDING. */
     public void approve() {
@@ -79,7 +81,14 @@ public class BorrowRequest {
 
     @Override
     public String toString() {
-        return String.format("Request[%s] %s -> %s | %s | due:%s",
-                requestId, borrower.getName(), equipment.getName(), status, dueDate);
+        String details = "";
+        if (denyReason != null) {
+            details += " | denied: " + denyReason;
+        }
+        if (dateReturned != null) {
+            details += " | returned: " + dateReturned;
+        }
+        return String.format("Request[%s] %s -> %s | %s | due:%s%s",
+                requestId, borrower.getName(), equipment.getName(), status, dueDate, details);
     }
 }

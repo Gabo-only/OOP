@@ -1,13 +1,13 @@
 /**
- * Created when a returned item is found damaged.
- * Association: linked to the BorrowRequest it came from.
+    this is created when a returned item is found damaged
+    this is a association linked to the BorrowRequest it came from
  */
 public class DamageReport {
 
     private String reportId;
     private BorrowRequest sourceRequest;
     private String description;
-    private String severity; // e.g. "MINOR", "MAJOR"
+    private String severity; // example "MINOR", "MAJOR"
 
     public DamageReport(String reportId, BorrowRequest sourceRequest, String description, String severity) {
         this.reportId = reportId;
